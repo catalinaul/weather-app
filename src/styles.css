@@ -1,0 +1,63 @@
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+.codedBy {
+    text-align: center;
+    font-size: 12px;
+}
+
+.weatherApp {
+    max-width: 700px;
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid #ededed;
+    border-radius: 10px;
+}
+
+small {
+    text-align: right;
+}
+
+h1 {
+    text-align: center;
+}
+
+.date {
+    text-align: right;
+}
+
+.minMax {
+    text-align: center;
+}
+
+img {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+}
+
+.cloudy {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+}
+
+h3 {
+    text-align: center;
+}
+
+.weekCard {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+}
+
+.weekCard p {
+    text-align: center;
+    margin: 0;
+    font-size: 12px;
+}

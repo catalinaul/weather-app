@@ -1,14 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/9ef0fd4c42.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Weather App</title>
 </head>
+
 <body>
-<h1>Hola</h1>    
+    <div class="container weatherApp">
+        <div class="search-bar">
+            <form class="row" id="search-form">
+                <div class="col-8">
+                    <input type="search" placeholder="Search city" class="form-control" id="city-search" />
+                </div>
+                <div class="col-2">
+                    <input type="submit" value="Search" class="form-control btn btn-secondary" id="search-btn" />
+                </div>
+                <div class="col-2">
+                    <input type="submit" value="Current" class="form-control btn btn-primary" id="current-btn" />
+                </div>
+            </form>
+            <div>
+                <br />
+                <div class="row">
+                    <p class="col-6" id="city">
+                        City
+                    </p>
+                    <p class="col-6 date" id="date">
+                        Date, time
+                    </p>
+                </div>
+
+                <br />
+
+                <div>
+                    <h1 id="current-temp">
+                        20°C
+                    </h1>
+                    <p class="minMax">
+                        0°C min / 0°C max
+                    </p>
+                    <img src="/images/Weather-01.png" alt="Sunny" />
+                    <h1>
+                        Sunny
+                    </h1>
+                </div>
+
+                <br />
+
+                <div class="row">
+                    <div class="col-3 weekCard">
+                        <h3>Mon</h3>
+                        <img src="images/Weather-03.png" alt="" class="cloudy" />
+                        <p>0°C / 24°C</p>
+                    </div>
+                    <div class="col-3 weekCard">
+                        <h3>Mon</h3>
+                        <img src="images/Weather-03.png" alt="" class="cloudy" />
+                        <p>0°C / 24°C</p>
+                    </div>
+                    <div class="col-3 weekCard">
+                        <h3>Mon</h3>
+                        <img src="images/Weather-03.png" alt="" class="cloudy" />
+                        <p>0°C / 24°C</p>
+                    </div>
+                    <div class="col-3 weekCard">
+                        <h3>Mon</h3>
+                        <img src="images/Weather-03.png" alt="" class="cloudy" />
+                        <p>0°C / 24°C</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <p class="codedBy">Coded by Catalina Ulloa</p>
 </body>
-<script src="/script.js"></script>
+<script src="/src/index.js"></script>
+
 </html>
