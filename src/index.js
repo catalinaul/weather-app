@@ -24,12 +24,14 @@ docDate.innerHTML = `${day} ${hours}:${minutes}`;
 function displayTemp(response) {
   let cityDisplay = document.querySelector("#city");
   cityDisplay.innerHTML = response.data.name;
-  let temp = document.querySelector("#current-temp");
-  temp.innerHTML = `${Math.round(response.data.main.temp)}°C`;
+  let temp = document.querySelector(".current-temp");
+  temp.innerHTML = `${Math.round(response.data.main.temp)}`;
   let minMax = document.querySelector(".minMax");
   minMax.innerHTML = `${Math.round(
     response.data.main.temp_min
-  )}°c min / ${Math.round(response.data.main.temp_max)}°c max`;
+  )}°c | ${Math.round(response.data.main.temp_max)}°c`;
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
 }
 
 function search(event) {
