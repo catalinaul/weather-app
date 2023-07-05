@@ -33,8 +33,17 @@ function displayTemp(response) {
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
   let dateElement = document.querySelector("#date");
-  dateElement.innerHTML = formatDate(response.data.dt * 1000)
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+   
+  let iconCode = response.data.weather[0].icon;
+  console.log(iconCode)
+  let iconImg = document.querySelector("#icon");
+  iconImg.setAttribute("src", `/images/${iconCode}.svg`);
+  iconImg.setAttribute("alt", response.data.weather[0].description);
+
 }
+
+
 
 function search(event) {
   event.preventDefault();
