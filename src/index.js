@@ -22,28 +22,28 @@ function formatDate(timestamp) {
 }
 
 function displayTemp(response) {
-  let cityDisplay = document.querySelector("#city");
-  cityDisplay.innerHTML = response.data.name;
-  let temp = document.querySelector(".current-temp");
-  temp.innerHTML = `${Math.round(response.data.main.temp)}`;
   let minMax = document.querySelector(".minMax");
+  let cityDisplay = document.querySelector("#city");
+  let temp = document.querySelector(".current-temp");
+  let descriptionElement = document.querySelector("#description");
+  let dateElement = document.querySelector("#date");
+  let iconCode = response.data.weather[0].icon;
+  let iconImg = document.querySelector("#icon");
+
+  celsiusTemp = response.data.main.temp;
+
+  cityDisplay.innerHTML = response.data.name;
+  temp.innerHTML = `${Math.round(celsiusTemp)}`;
   minMax.innerHTML = `${Math.round(
     response.data.main.temp_min
   )}°c | ${Math.round(response.data.main.temp_max)}°c`;
-  let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
-  let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
    
-  let iconCode = response.data.weather[0].icon;
-  console.log(iconCode)
-  let iconImg = document.querySelector("#icon");
   iconImg.setAttribute("src", `/images/${iconCode}.svg`);
   iconImg.setAttribute("alt", response.data.weather[0].description);
 
 }
-
-
 
 function search(event) {
   event.preventDefault();
@@ -54,7 +54,7 @@ function search(event) {
 }
 
 let cityBtn = document.querySelector("#search-btn");
-cityBtn.addEventListener("click", search);
+
 
 function searchLocation(position) {
   let apiKey = "8ca7dd4e61360b90fb66918853670e48";
@@ -70,3 +70,37 @@ function getCurrentLocation(event) {
 
 let currentLocationButton = document.querySelector("#current-btn");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+function convertF(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  let temp = document.querySelector(".current-temp");
+  temp.innerHTML = Math.round(fahrenheitTemp);
+  let tempInd = document.querySelector("#temp-indicator");
+  tempInd.innerHTML = "°F"
+  celsiusBtn.classList.remove("active-btn")
+  celsiusBtn.classList.add("inactive-btn")
+  fahrenheitBtn.classList.remove("inactive-btn")
+  fahrenheitBtn.classList.add("active-btn")
+}
+
+function convertC(event) {
+  event.preventDefault();
+  let temp = document.querySelector(".current-temp");
+  temp.innerHTML = Math.round(celsiusTemp);
+  let tempInd = document.querySelector("#temp-indicator");
+  tempInd.innerHTML = "°C"
+  celsiusBtn.classList.remove("inactive-btn")
+  celsiusBtn.classList.add("active-btn")
+  fahrenheitBtn.classList.add("inactive-btn")
+}
+
+let celsiusTemp = null;
+
+let fahrenheitBtn = document.querySelector("#fahrenheit-btn");
+fahrenheitBtn.addEventListener("click", convertF)
+
+let celsiusBtn = document.querySelector("#celsius-btn");
+celsiusBtn.addEventListener("click", convertC)
+
+cityBtn.addEventListener("click", search);

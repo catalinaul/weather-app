@@ -29,7 +29,7 @@
         <div class="search-bar">
             <form class="row" id="search-form">
                 <div class="col-8">
-                    <input type="search" placeholder="Search city" class="form-control" id="city-search" />
+                    <input type="search" placeholder="Search city" class="form-control" id="city-search" autocomplete="off"/>
                 </div>
                 <div class="col-2">
                     <input type="submit" value="Search" class="form-control btn btn-secondary" id="search-btn" />
@@ -38,59 +38,74 @@
                     <input type="submit" value="Current" class="form-control btn btn-primary" id="current-btn" />
                 </div>
             </form>
-        <div>
+
             <div class="city-information">
                 <h2 id="city">City Name</h2>
                 <p><span id="date">00:00</span> | <span id="description">State</span></p>
-                <img src=" " alt=" " id="icon">
+                <img src="/images/01d.svg" alt=" " id="icon">
             </div>
             <div class="temp-info d-flex justify-content-center">
-                <span><h3 class="current-temp">00</h3></span><span><p>°c</p></span>
+                <span><h3 class="current-temp">00</h3></span><span><p id="temp-indicator">°C</p></span>
+            </div>
+            <div class="windSpeed">
+                Wind speed: 00%
             </div>
             <div class="minMax">
                 <p>00° | 00°</p>
             </div>
+
+
         
         <div class="week-weather row">
             <div class="col">
                 <div class="week-day">Day</div>
-                <img src="/images/Clear.svg" alt="Sunny icon">
+                <img src="/images/01d.svg" alt="Sunny icon">
                 <div class="week-temp">
                     <span class="max">00°</span> | <span class="min">00°</span>
                 </div>
             </div>
             <div class="col">
                 <div class="week-day">Day</div>
-                <img src="/images/Clear.svg" alt="Sunny icon">
+                <img src="/images/01d.svg" alt="Sunny icon">
                 <div class="week-temp">
                     <span class="max">00°</span> | <span class="min">00°</span>
                 </div>
             </div>
             <div class="col">
                 <div class="week-day">Day</div>
-                <img src="/images/Clear.svg" alt="Sunny icon">
+                <img src="/images/01d.svg" alt="Sunny icon">
                 <div class="week-temp">
                     <span class="max">00°</span> | <span class="min">00°</span>
                 </div>
             </div>
             <div class="col">
                 <div class="week-day">Day</div>
-                <img src="/images/Clear.svg" alt="Sunny icon">
+                <img src="/images/01d.svg" alt="Sunny icon">
                 <div class="week-temp">
                     <span class="max">00°</span> | <span class="min">00°</span>
                 </div>
             </div>
             <div class="col">
                 <div class="week-day">Day</div>
-                <img src="/images/Clear.svg" alt="Sunny icon">
+                <img src="/images/01d.svg" alt="Sunny icon">
                 <div class="week-temp">
                     <span class="max">00°</span> | <span class="min">00°</span>
                 </div>
             </div>
 
         </div>
+
     </div>
+        <div class="d-flex justify-content-center conversion">
+            <div>
+                <input type="submit" value="Convert to Fahrenheit" class="form-control btn  btn-secondary convert-btn inactive-btn" id="fahrenheit-btn" />
+            </div>
+            <div>
+            <input type="submit" value="Convert to Celsius" class="form-control btn btn-secondary convert-btn active-btn" id="celsius-btn" />
+            </div>
+        </div>
     </div>
+
     <br>
 <div class="coded-by">
     Project <a href="http://">open-sourced on GitHub</a> and <a href="http://">hosted on Netlify</a>. Coded by Catalina

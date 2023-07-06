@@ -9,6 +9,7 @@ body {
     border-radius: 25px;
     margin-top: 81px;
     box-shadow: 9px 10px 25px -4px rgba(0, 0, 0, 0.07);
+    height: 880px;
 }
 
 #app-title h1 {
@@ -57,6 +58,26 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
 }
+
+.active-btn {
+    border-radius: 10px;
+    background: #b5b5b5;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    margin-top: 10px;
+    cursor: default;
+}
+
+.inactive-btn {
+    border-radius: 10px;
+    background: #407088;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
 
 .city-information {
     text-align: center;
@@ -107,9 +128,16 @@ body {
     letter-spacing: 1px;
 }
 
+.windSpeed {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
 .week-weather {
     margin-top: 42px;
-    padding-bottom: 10px;
+    margin-bottom: 42px;
     text-align: center;
     font-family: 'Poppins', sans-serif;
 }
@@ -118,7 +146,7 @@ body {
     width: 60px;
         height: 60px;
         margin-top: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 0px;
 }
 
 .week-temp {
@@ -129,7 +157,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-top: 55px;
+    margin-top: 50px;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     
@@ -137,4 +165,7 @@ body {
 
 .coded-by a {
     color: #407088;
+}
+.conversion {
+    margin-bottom: 42px;
 }
